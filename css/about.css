@@ -1,0 +1,119 @@
+.about-section-landing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section-landing h2 {
+  color: #fff;
+  font-weight: 100;
+}
+
+.about-page-about-section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-page-about-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.splitted-section-container {
+  backdrop-filter: blur(4px);
+  background-color: rgb(100, 0, 116, 0.1);
+  border-radius: 8px;
+  padding: 40px 26px;
+  height: 100%;
+
+  svg{
+    min-width: 40px;
+  }
+
+  h3,
+  h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#0b89e3, #bb00da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #979797;
+  }
+
+  h3 {
+    font-weight: 800;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  &.container-bg-grid {
+    background-image: url("../img/background-grid.png");
+    background-repeat: no-repeat;
+    background-size: 90% 80%;
+    background-position: center;
+  }
+
+  &.dark-bg-color-background {
+    background-image: linear-gradient(
+        rgba(187, 0, 218, 0.2),
+        rgba(31, 110, 212, 0.2)
+      ),
+      url("../img/background-grid.png");
+    background-size: 100%;
+  }
+}
+
+.colored-background-with-text {
+  background: -webkit-linear-gradient(#0b89e3, #bb00da);
+  padding: 12px 20px;
+  border-radius: 50px;
+
+  h5 {
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &.black-white-bg {
+    background: -webkit-linear-gradient(#ffffff, #696969);
+    h5 {
+      color: #000;
+      font-weight: 600;
+    }
+  }
+}
+
+.about-points-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-each-point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-direction: row;
+}
+
+.main-part{
+  height: 85vh;
+}
+
+@media (max-width: 767px) {
+  .about-each-point {
+    justify-content: start;
+  }
+
+  .main-part{
+    height: 60vh;
+  }
+}
