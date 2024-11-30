@@ -116,7 +116,7 @@ include './admin_php/config.php';
           <h1 class="niconne-regular">Augustine</h1>
           <h3>ABOUT ME</h3>
         </div>
-        <p class="mt-4">
+        <p class="mt-4 text-justify">
           Meet Augustine Devotta, a gifted graphic designer, marketing strategist, and self-taught artist.
           Painting has been Augustine's lifelong passion, sparked in childhood and nurtured by innate talent.
           A pivotal moment came when Rev. Fr. Thamburaj SJ, principal and co-founder of Loyola College's

@@ -12,18 +12,6 @@
   font-weight: 100;
 }
 
-.about-page-about-section {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.about-page-about-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .splitted-section-container {
   backdrop-filter: blur(4px);
   background-color: rgb(100, 0, 116, 0.1);
@@ -31,7 +19,7 @@
   padding: 40px 26px;
   height: 100%;
 
-  svg{
+  svg {
     min-width: 40px;
   }
 
@@ -104,7 +92,7 @@
   flex-direction: row;
 }
 
-.main-part{
+.main-part {
   height: 85vh;
 }
 
@@ -113,7 +101,28 @@
     justify-content: start;
   }
 
-  .main-part{
+  .main-part {
     height: 60vh;
   }
+}
+
+.about-landing {
+  .about-each-point{
+    justify-content: left;
+    padding: 4px 0;
+  }
+  p {
+    font-size: 13px;
+    text-align: left !important;
+  }
+  svg {
+    width: 25px;
+    min-width: 25px;
+  }
+}
+
+.about-main-card {
+  padding: 20px 30px;
+  background-color: #ffffff10;
+  border-radius: 20px;
 }

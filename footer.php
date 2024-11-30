@@ -1,7 +1,7 @@
 <div class="container-fluid quotation-section mt-5 mb-3 mb-md-5 py-5">
     <div class="row">
         <div class="col">
-            <h1 class="niconne-regular">
+            <h1 class="font-weight-light">
                 “ Where the spirit does not work with the hand there is no Art. ”
             </h1>
             <div class="quotation-auther-name mt-3">
@@ -14,13 +14,15 @@
     </div>
 </div>
 
-<div class="container-fluid-max">
-    <div class="footer-container">
-        <div class="footer-animated-container">
-            <div id="footer-animated-wall"></div>
+<?php if (!($_SERVER['REQUEST_URI'] == '/' || substr($_SERVER['REQUEST_URI'], -1) == '/' || basename($_SERVER['REQUEST_URI'], '.php') == 'home' || basename($_SERVER['REQUEST_URI'], '.php') == 'index')): ?>
+    <div class="container-fluid-max">
+        <div class="footer-container">
+            <div class="footer-animated-container">
+                <div id="footer-animated-wall"></div>
+            </div>
         </div>
     </div>
-</div>
+<?php endif; ?>
 
 <?php if (basename($_SERVER['REQUEST_URI'], '.php') != 'shop'): ?>
     <button class="art-float-btn" onclick="window.location.href='shop'">
@@ -33,7 +35,7 @@
     <footer class="footer">
         <div class="footer-bg"></div>
         <div class="footer-content">
-            <div class="nav-section mt-4 mt-md-0">
+            <div class="nav-section mt-2 mt-md-0">
                 <h3 class="section-title">Navigation</h3>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
@@ -43,11 +45,11 @@
                 </ul>
             </div>
 
-            <div class="social-section mt-4 mt-md-0">
+            <div class="social-section mt-md-0">
                 <h3 class="section-title">Connect</h3>
                 <ul class="social-links">
                     <li>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/augustine-devotta-37a91366/?originalSubdomain=in">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path
                                     d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
@@ -56,7 +58,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/augustine.devotta/">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
                             </svg>
@@ -64,7 +66,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/augustinedevotta/?hl=en">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />

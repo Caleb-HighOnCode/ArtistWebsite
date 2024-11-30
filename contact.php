@@ -124,10 +124,9 @@
             </form>
             <!-- Social Icons -->
             <div class="social-icons">
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/augustinedevotta/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/augustine.devotta/" class="social-icon"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/augustine-devotta-37a91366/?originalSubdomain=in" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>

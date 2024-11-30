@@ -33,58 +33,113 @@ include './admin_php/config.php';
 <body>
   <?php include 'subheader.php' ?>
 
-  <section class="hero landing-screen d-flex align-items-center">
+  <section class="hero about-landing d-flex align-items-center">
     <div class="container-fluid position-relative">
-      <div class="row align-items-center">
+      <div class="row">
         <!-- Left Content -->
         <div class="col-lg-6 order-1">
-          <div>
-            <div class="d-flex align-items-center mb-4">
-              <div class="me-3">
-                <i class="fas fa-palette text-purple-500 me-2"></i>
-                <i class="fas fa-camera text-blue-500 me-2"></i>
-                <i class="fas fa-pen-nib text-pink-500"></i>
+          <div class="about-main-card">
+            <div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3">
+                  <i class="fas fa-palette text-purple-500 me-2"></i>
+                  <i class="fas fa-pen-nib text-pink-500"></i>
+                </div>
+                <span class="text-gray-400">Shop From Our Gallery</span>
               </div>
-              <span class="text-gray-400">Shop The Creativity</span>
+            </div>
+
+            <div>
+              <h3 class="display-6 fw-bold mb-3">
+                Own The
+                <span class="gradient-text">Worth</span>
+              </h3>
+            </div>
+
+            <div>
+              <p class="text-gray-300">
+                Transforming visions into captivating visual experiences through paints and brush strokes.
+              </p>
             </div>
           </div>
 
-          <div>
-            <h1 class="display-4 fw-bold mb-4">
-              Own The
-              <span class="gradient-text">Worth</span>
-            </h1>
+          <div class="about-main-card mt-3">
+
+            <div class="d-flex flex-wrap gap-4 mb-2 text-gray-400">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-pen-nib text-success me-2"></i>
+                <span>50+ Arts</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="display-6 fw-bold mb-3">
+                Commissioned
+                <span class="gradient-text">Works</span>
+              </h3>
+            </div>
+
+            <div>
+              <div class="about-each-point">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12.5" fill="url(#paint0_linear_25_62)" />
+                  <path d="M4.5 13.5L10 19L21 6.5" stroke="#1F6ED4" stroke-width="2" />
+                  <defs>
+                    <linearGradient id="paint0_linear_25_62" x1="12.5" y1="0" x2="12.5" y2="25"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="white" />
+                      <stop offset="1" stop-color="#8C8C8C" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <p>Stained glass work for friary in Kothagiri. -2006</p>
+              </div>
+              <div class="about-each-point">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12.5" fill="url(#paint0_linear_25_62)" />
+                  <path d="M4.5 13.5L10 19L21 6.5" stroke="#1F6ED4" stroke-width="2" />
+                  <defs>
+                    <linearGradient id="paint0_linear_25_62" x1="12.5" y1="0" x2="12.5" y2="25"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="white" />
+                      <stop offset="1" stop-color="#8C8C8C" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <p>Executed 6 x 8 ft painting with relief work for Taurus Leathers, Ranipet. - 2010</p>
+              </div>
+              <div class="about-each-point">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12.5" fill="url(#paint0_linear_25_62)" />
+                  <path d="M4.5 13.5L10 19L21 6.5" stroke="#1F6ED4" stroke-width="2" />
+                  <defs>
+                    <linearGradient id="paint0_linear_25_62" x1="12.5" y1="0" x2="12.5" y2="25"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="white" />
+                      <stop offset="1" stop-color="#8C8C8C" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <p>Corporate thematic paintings for, Cholayil Group, Chennai.- 2014 ( Purchased by Architect Ms. Malika)
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <p class="lead text-gray-300 mb-4">
-              Transforming visions into captivating visual experiences through innovative design and photography.
-            </p>
-          </div>
-
-          <div class="d-flex gap-3 mb-5">
+          <div class="d-flex gap-3 mb-5 mt-2">
             <div class="d-flex align-items-center justify-content-center mt-2">
               <a href="contact" class="">
                 <button class="view-button">
-                  Connect Now
+                  Contact
                   <i class="fas fa-arrow-right"></i>
                 </button>
               </a>
             </div>
           </div>
-
-          <div>
-            <div class="d-flex flex-wrap gap-4 text-gray-400">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-pen-nib text-success me-2"></i>
-                <span>100+ Arts</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Right Content - Floating Images -->
-        <div class="col-lg-6 order-0 d-none d-lg-block">
+        <div class="col-lg-6 order-0 mb-3 mb-mb-0 d-none d-md-block">
           <div class="distortion-container">
             <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
           </div>

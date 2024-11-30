@@ -1,5 +1,5 @@
 const NUM_ROWS = 3;
-const NUM_IMAGES = 140;
+const NUM_IMAGES = 540;
 let IMAGES = [
   'img/low/1.png',
   'img/low/2.png',
@@ -37,13 +37,13 @@ let IMAGES = [
   'img/low/z.png',
 ];
 
-let imagesLen =0;
+let imagesLen = 0;
 while(imagesLen<NUM_IMAGES){
   IMAGES = [...IMAGES,...IMAGES]
   imagesLen= IMAGES.length;
 }
 
-IMAGES = IMAGES.splice(0,140);
+IMAGES = IMAGES.splice(0,540);
 
 // Populate images array
 // for (let i = 0; i < NUM_IMAGES; i++) {

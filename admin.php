@@ -59,12 +59,12 @@ if (isset($_POST['delete_landing_image'])) {
         .container {
             margin-top: 50px;
         }
-        
-        a{
+
+        a {
             text-decoration: none;
         }
 
-        .container-fluid{
+        .container-fluid {
             max-width: 1400px;
         }
 
@@ -128,7 +128,12 @@ if (isset($_POST['delete_landing_image'])) {
                 <div class="sidebar-sticky bg-light">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-secondary active" href="#projectsSection" data-toggle="tab">My Art Works</a>
+                            <a class="nav-link text-secondary active" href="#projectsSection" data-toggle="tab">My Art
+                                Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#landingSection" data-toggle="tab">Work
+                                Images</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-secondary" href="#contactSection" data-toggle="tab">Contact
@@ -204,12 +209,84 @@ if (isset($_POST['delete_landing_image'])) {
                             ?>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="landingSection">
+                        <!-- Add New landing images Button -->
+                        <button class="btn btn-success mb-3" data-toggle="modal" data-target="#addLandingModal">Add
+                            Work Images</button>
+                        <div class="row">
+                            <?php
+                            // Fetch all images from the landing_page table
+                            $landingImageQuery = mysqli_query($conn, "SELECT * FROM landing_page ORDER BY created_at DESC");
+
+                            while ($landingImage = mysqli_fetch_assoc($landingImageQuery)) {
+                                ?>
+                                <div class="col-md-3 mb-4 mt-3">
+                                    <div class="card">
+                                        <img src="<?php echo $landingImage['imageUrl']; ?>" class="card-img-top"
+                                            alt="Image">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo htmlspecialchars($landingImage['title']); ?>
+                                            </h5>
+                                            <p class="card-text">
+                                                <?php echo htmlspecialchars($landingImage['description']); ?>
+                                            </p>
+                                            <form method="post">
+                                                <input type="hidden" name="image_id"
+                                                    value="<?php echo $landingImage['id']; ?>">
+                                                <button type="submit" name="delete_landing_image"
+                                                    class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="contactSection">
                         <h4 class="mb-2">Contact Form Submissions</h4>
                         <div class="table-responsive" id="contact-table"></div>
                     </div>
                 </div>
             </main>
+        </div>
+    </div>
+
+    <!-- Add Landing Images Modal -->
+    <div class="modal fade" id="addLandingModal" tabindex="-1" role="dialog" aria-labelledby="addProjectModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="addLandingForm" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProjectModalLabel">Add New Works</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <div class="form-group">
+                            <label for="title">Title (optional)</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description (optional)</label>
+                            <textarea name="description" class="form-control" rows="3"></textarea>
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="image">Select Image</label>
+                            <input type="file" name="image" class="form-control-file" required>
+                        </div>
+
+                        <div id="preview"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -682,6 +759,30 @@ if (isset($_POST['delete_landing_image'])) {
                     },
                     success: function (response) {
                         location.reload();
+                    }
+                });
+            });
+
+            $('#addLandingForm').on('submit', function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(this);
+                formData.append('add_landing', true);
+
+                $.ajax({
+                    url: './admin_php/add_landing_image.php',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log('success');
+                        alert(response);
+                        location.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error(textStatus, errorThrown); // Log errors for debugging
+                        alert('Error uploading file, please try again.');
                     }
                 });
             });

@@ -41,10 +41,32 @@ include './admin_php/config.php';
 <body>
   <?php include 'subheader.php' ?>
 
-  <div class="container-fluid-max landing-screen">
-    <div class="landing-screen-container">
-      <div class="landing-screen-main-image">
-        <img src="./img/main image.png" alt="" />
+  <div class="container-fluid-max">
+    <div class="footer-container home-page">
+      <div class="footer-animated-container">
+        <div id="footer-animated-wall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5 mt-md-0 pt-md-4 position-relative">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="text-end home-quote-text">I believe the <span>'EARTH'</span><br /> without <span>'ART'</span><br />
+          is just <span>'EH'</span>
+        </h1>
+      </div>
+      <div class="col-md-4 offset-md-1 position-relative">
+        <div class="about-page-about-section">
+          <img src="./img/about-augestine-img.png" alt="" />
+        </div>
+        <div class="bg-gradient-1"></div>
+      </div>
+      <div class="floating-shapes">
+        <i class="fas fa-palette shape" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
+        <i class="fas fa-brush shape" style="top: 60%; left: 20%; animation-delay: 0.5s;"></i>
+        <i class="fas fa-pencil-alt shape" style="top: 30%; right: 15%; animation-delay: 1s;"></i>
+        <i class="fas fa-paint-brush shape" style="top: 70%; right: 25%; animation-delay: 1.5s;"></i>
       </div>
     </div>
   </div>
@@ -95,7 +117,7 @@ include './admin_php/config.php';
           <h1 class="niconne-regular">Augustine</h1>
           <h3>ABOUT ME</h3>
         </div>
-        <p class="my-4">
+        <p class="my-4 text-justify">
           Meet Augustine Devotta, a gifted graphic designer, marketing strategist, and self-taught artist.
           Painting has been Augustine's lifelong passion, sparked in childhood and nurtured by innate talent.
           A pivotal moment came when Rev. Fr. Thamburaj SJ, principal and co-founder of Loyola College's
@@ -179,18 +201,18 @@ include './admin_php/config.php';
         <div class="gallery-container mt-5">
           <?php
           // Fetch all project images
-          $imageSql = "SELECT image_url FROM images LIMIT 15";
+          $imageSql = "SELECT imageUrl FROM landing_page";
           $resultImages = $conn->query($imageSql);
 
           if ($resultImages->num_rows > 0) {
             while ($row = $resultImages->fetch_assoc()) {
-              $image_url = strpos($row['image_url'], '../') === 0 ? substr($row['image_url'], 3) : $row['image_url'];
+              $imageUrl = strpos($row['imageUrl'], '../') === 0 ? substr($row['imageUrl'], 3) : $row['imageUrl'];
               ?>
               <div class="gallery-card">
                 <div class="gallery-card-image">
-                  <a href="<?php echo $image_url; ?>" data-fancybox="gallery">
+                  <a href="<?php echo $imageUrl; ?>" data-fancybox="gallery">
                     <i class="icon-zoom-in"></i>
-                    <img src="<?php echo $image_url; ?>" alt="Augustine Devotta Arts" />
+                    <img src="<?php echo $imageUrl; ?>" alt="Augustine Devotta Arts" />
                   </a>
                 </div>
               </div>

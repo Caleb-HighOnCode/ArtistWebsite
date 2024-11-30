@@ -4,10 +4,15 @@
 }
 
 .distortion-container {
-  padding: 20px;
   width: 100%;
   height: 75vh;
   overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .distortion-container {
+    height: 300px;
+  }
 }
 
 .rgbKineticSlider {
@@ -165,7 +170,7 @@
   font-size: 0.75rem;
 }
 
-.art-card .out-of-stock{
+.art-card .out-of-stock {
   background: rgba(255, 0, 0, 0.247);
 }
 
@@ -176,7 +181,7 @@
 
 .art-card .artwork-popup__stock--unavailable {
   background: rgba(239, 68, 68, 0.1);
-  color: #EF4444;
+  color: #ef4444;
 }
 
 .art-card .content-section {
@@ -499,7 +504,9 @@ a {
 /* Hero Section */
 .hero {
   /* min-height: 100vh; */
-  height: 80vh;
+  height: 100%;
+  min-height: 100%;
+  margin-top: 90px;
   width: 100%;
   position: relative;
   color: #fff;
@@ -515,7 +522,7 @@ a {
 .floating-image {
   position: absolute;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
   overflow: hidden;
 }
@@ -528,6 +535,61 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.float-1 {
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+}
+.float-2 {
+  width: 224px;
+  height: 224px;
+  top: 80px;
+  right: 0;
+}
+.float-3 {
+  width: 192px;
+  height: 192px;
+  bottom: 80px;
+  left: 40px;
+}
+.float-4 {
+  width: 160px;
+  height: 160px;
+  bottom: 0;
+  right: 80px;
+}
+
+@media (max-width: 576px) {
+  .floating-images{
+    height: 400px;
+  }
+  .float-1 {
+    width: 186px;
+    height: 186px;
+    top: 10px;
+    left: 0;
+  }
+  .float-2 {
+    width: 142px;
+    height: 142px;
+    top: 80px;
+    right: 0;
+  }
+  .float-3 {
+    width: 162px;
+    height: 162px;
+    bottom: 80px;
+    left: 20px;
+  }
+  .float-4 {
+    width: 190px;
+    height: 190px;
+    bottom: 0;
+    right: 60px;
+  }
 }
 
 /* Animation Classes */
@@ -544,29 +606,57 @@ a {
 
 /* Floating Animations */
 @keyframes float-1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-10px, -20px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -20px);
+  }
 }
 
 @keyframes float-2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(10px, -15px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -15px);
+  }
 }
 
 @keyframes float-3 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-15px, 10px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-15px, 10px);
+  }
 }
 
 @keyframes float-4 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(15px, -10px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -10px);
+  }
 }
 
-.float-1 { animation: float-1 6s ease-in-out infinite; }
-.float-2 { animation: float-2 7s ease-in-out infinite; }
-.float-3 { animation: float-3 8s ease-in-out infinite; }
-.float-4 { animation: float-4 9s ease-in-out infinite; }
+.float-1 {
+  animation: float-1 6s ease-in-out infinite;
+}
+.float-2 {
+  animation: float-2 7s ease-in-out infinite;
+}
+.float-3 {
+  animation: float-3 8s ease-in-out infinite;
+}
+.float-4 {
+  animation: float-4 9s ease-in-out infinite;
+}
 
 /* Decorative Gradients */
 .bg-gradient-1 {

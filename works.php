@@ -36,7 +36,7 @@ include './admin_php/config.php';
   <?php include 'subheader.php' ?>
 
   <!-- Hero Section -->
-  <section class="hero landing-screen d-flex align-items-center">
+  <section class="hero d-flex align-items-center">
     <div class="container-fluid position-relative">
       <div class="row align-items-center">
         <!-- Left Content -->
@@ -87,21 +87,21 @@ include './admin_php/config.php';
         </div>
 
         <!-- Right Content - Floating Images -->
-        <div class="col-lg-6 d-none d-lg-block">
+        <div class="col-lg-6">
           <div class="floating-images">
             <div class="bg-gradient-1"></div>
             <div class="bg-gradient-2"></div>
 
-            <div class="floating-image float-1" style="width: 256px; height: 256px; top: 0; left: 0;">
+            <div class="floating-image float-1">
               <img src="img/mid/d.png" alt="Creative Work 1">
             </div>
-            <div class="floating-image float-2" style="width: 224px; height: 224px; top: 80px; right: 0;">
+            <div class="floating-image float-2">
               <img src="img/mid/b.png" alt="Creative Work 2">
             </div>
-            <div class="floating-image float-3" style="width: 192px; height: 192px; bottom: 80px; left: 40px;">
+            <div class="floating-image float-3">
               <img src="img/mid/q.png" alt="Creative Work 3">
             </div>
-            <div class="floating-image float-4" style="width: 160px; height: 160px; bottom: 0; right: 80px;">
+            <div class="floating-image float-4">
               <img src="img/mid/1.png" alt="Creative Work 4">
             </div>
           </div>
@@ -120,18 +120,18 @@ include './admin_php/config.php';
         <div class="gallery-container mt-5">
           <?php
           // Fetch all project images
-          $imageSql = "SELECT image_url FROM images LIMIT 15";
+          $imageSql = "SELECT imageUrl FROM landing_page";
           $resultImages = $conn->query($imageSql);
 
           if ($resultImages->num_rows > 0) {
             while ($row = $resultImages->fetch_assoc()) {
-              $image_url = strpos($row['image_url'], '../') === 0 ? substr($row['image_url'], 3) : $row['image_url'];
+              $imageUrl = strpos($row['imageUrl'], '../') === 0 ? substr($row['imageUrl'], 3) : $row['imageUrl'];
               ?>
               <div class="gallery-card">
                 <div class="gallery-card-image">
-                  <a href="<?php echo $image_url; ?>" data-fancybox="gallery">
+                  <a href="<?php echo $imageUrl; ?>" data-fancybox="gallery">
                     <i class="icon-zoom-in"></i>
-                    <img src="<?php echo $image_url; ?>" alt="Augustine Devotta Arts" />
+                    <img src="<?php echo $imageUrl; ?>" alt="Augustine Devotta Arts" />
                   </a>
                 </div>
               </div>
